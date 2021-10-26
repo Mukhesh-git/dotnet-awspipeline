@@ -27,12 +27,13 @@ pipeline {
         sh '''
       aws --version
       REPOSITORY_URI=160006709718.dkr.ecr.us-east-1.amazonaws.com/dotnet-app
+      REPOSITORY_NAME=dotnet-app
       DOCKER_LOGIN_PASSWORD=$(aws ecr get-login-password  --region us-east-1)
       docker login -u AWS -p $DOCKER_LOGIN_PASSWORD https://160006709718.dkr.ecr.us-east-1.amazonaws.com/
-      docker build -t  $REPOSITORY_URI:SAMPLE-DEMO-${CODEBUILD_BUILD_NUMBER} .
+      docker build -t dotnet-app:$BUILD_NUMBER .
       echo Build completed on `date`
       echo Pushing the Docker images...
-      docker push $REPOSITORY_URI:SAMPLE-DEMO-${CODEBUILD_BUILD_NUMBER}
+      docker push $REPOSITORY_URI:dotnet-app-${BUILD_NUMBER}
 	  '''
      }   
    }
