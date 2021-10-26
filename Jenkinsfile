@@ -11,7 +11,7 @@ pipeline {
 	 export PATH=${PATH}:${HOME}/.dotnet/tools
 	 echo $PATH
          echo Restore started on `date`.
-         dotnet sonarscanner begin /k:"Dotnet" /d:sonar.host.url=$sonar_url /d:sonar.login=51d9aa716cd5381458faa5f306f274fcccdf4bf4
+         dotnet sonarscanner begin /k:"Dotnet" /d:sonar.host.url=http://cmsiva.mukesh.website /d:sonar.login=51d9aa716cd5381458faa5f306f274fcccdf4bf4
          dotnet restore panz.csproj
          dotnet build panz.csproj -c Release
          dotnet sonarscanner end /d:sonar.login=51d9aa716cd5381458faa5f306f274fcccdf4bf4
