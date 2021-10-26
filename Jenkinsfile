@@ -25,7 +25,7 @@ pipeline {
    stage('Docker build and push') {
       steps {
         sh '''
-     aws --version
+      aws --version
       REPOSITORY_URI=160006709718.dkr.ecr.us-east-1.amazonaws.com/dotnet-app
       DOCKER_LOGIN_PASSWORD=$(aws ecr get-login-password  --region us-east-1)
       docker login -u AWS -p $DOCKER_LOGIN_PASSWORD https://160006709718.dkr.ecr.us-east-1.amazonaws.com/
