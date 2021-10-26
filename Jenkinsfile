@@ -7,19 +7,12 @@ pipeline {
     stage('SonarQube Analysis') {
       steps {
         sh '''
-	 whoami
-//	 export PATH=${PATH}:${HOME}/.dotnet/tools
-//	 echo $PATH
-//         echo Restore started on `date`.
-//        cleanWs()
-//	 chmod +x -R ${env.WORKSPACE}
-	 echo $PATH
+        echo $PATH
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/ubuntu/.dotnet/tools
 	dotnet sonarscanner begin /k:"Dotnet" /d:sonar.host.url=http://cmsiva.mukesh.website /d:sonar.login=51d9aa716cd5381458faa5f306f274fcccdf4bf4
 	dotnet restore panz.csproj
 	dotnet build panz.csproj -c Release
 	dotnet sonarscanner end /d:sonar.login=51d9aa716cd5381458faa5f306f274fcccdf4bf4
-
         
         '''
       }
