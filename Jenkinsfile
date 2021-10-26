@@ -12,6 +12,7 @@ pipeline {
 //	 echo $PATH
 //         echo Restore started on `date`.
          cleanWs()
+	 chmod +x -R ${env.WORKSPACE}
 	 echo $PATH
          dotnet sonarscanner begin /k:"Dotnet" /d:sonar.host.url=http://cmsiva.mukesh.website /d:sonar.login=51d9aa716cd5381458faa5f306f274fcccdf4bf4
          dotnet restore panz.csproj
