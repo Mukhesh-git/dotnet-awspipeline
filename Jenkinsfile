@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('SonarQube Analysis') {
       steps {
-        sh '''http://sonar.mukesh.website/projects
+        sh '''
         echo $PATH
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/ubuntu/.dotnet/tools
 	dotnet sonarscanner begin /k:"dot-net" /d:sonar.host.url=http://sonar.mukesh.website /d:sonar.login=d08dc2cf7415bfafb1ae5bb4fa255ae1a20725c3
