@@ -28,7 +28,7 @@ pipeline {
       aws --version
       REPOSITORY_URI=971076122335.dkr.ecr.us-east-1.amazonaws.com/dotnet
       DOCKER_LOGIN_PASSWORD=$(aws ecr get-login-password  --region us-east-1)
-      docker login -u AWS -p $DOCKER_LOGIN_PASSWORD https://971076122335.dkr.ecr.us-east-1.amazonaws.com/
+      docker login -u AWS -p $DOCKER_LOGIN_PASSWORD https://971076122335.dkr.ecr.us-east-1.amazonaws.com
       docker build -t $REPOSITORY_URI:sample-dot-$BUILD_NUMBER .
       echo Build completed on `date`
       echo Pushing the Docker images...
