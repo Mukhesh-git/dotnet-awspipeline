@@ -9,10 +9,10 @@ pipeline {
         sh '''
         echo $PATH
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/ubuntu/.dotnet/tools
-	dotnet sonarscanner begin /k:"Dotnet" /d:sonar.host.url=http://sonar.mukesh.website /d:sonar.login=5ddb90f56ac11ce691a8e1e1d8fe1dd4aac4e460
+	dotnet sonarscanner begin /k:"pipeline" /d:sonar.host.url=http://sonar.mukesh.website /d:sonar.login=f23c80870013486eb0a398f21b8963009df56789
 	dotnet restore panz.csproj
 	dotnet build panz.csproj -c Release
-	dotnet sonarscanner end /d:sonar.login=5ddb90f56ac11ce691a8e1e1d8fe1dd4aac4e460
+	dotnet sonarscanner end /d:sonar.login=f23c80870013486eb0a398f21b8963009df56789
         
         '''
       }
