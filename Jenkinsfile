@@ -41,7 +41,7 @@ pipeline {
         sh '''
           chmod +x changebuildnumber.sh
           ./changebuildnumber.sh $BUILD_NUMBER
-	  sh -x ecs-auto.sh
+	  kubectl apply -f deploy-new.yaml
           '''
      }    
     } 
