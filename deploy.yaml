@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - 
-          image: "971076122335.dkr.ecr.us-east-2.amazonaws.com/demo-ecr:sample-dot-4"
+          image: "971076122335.dkr.ecr.us-east-2.amazonaws.com/demo-ecr:sample-dot-buildNumber"
           name: dotnet
           ports:
             - 
