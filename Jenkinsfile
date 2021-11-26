@@ -36,6 +36,11 @@ pipeline {
 	  '''
      }   
    }
+   stage('Check kubectl version') {
+       steps {
+         sh 'kubectl --version'
+          }
+      }
     stage('eks deploy') {
       steps {
         sh '''
