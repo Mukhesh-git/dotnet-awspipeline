@@ -17,11 +17,11 @@ pipeline {
 //         '''
 //       }
 //     }
-  stage('Dotnet Publish') {
-      steps {
-        sh 'dotnet publish panz.csproj -c Release'
-      }   
-    }
+//  stage('Dotnet Publish') {
+//       steps {
+//         sh 'dotnet publish panz.csproj -c Release'
+//       }   
+//     }
    stage('Docker build and push') {
       steps {
         sh '''
