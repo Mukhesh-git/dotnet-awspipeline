@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dotnet
+  name: dotnet-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dotnet
+  template:
+    metadata:
+      labels:
+        app: dotnet
+    spec:
+      containers:
+        - 
+          image: "971076122335.dkr.ecr.us-east-2.amazonaws.com/demo-ecr:sample-dot-4"
+          name: dotnet
+          ports:
+            - 
+              containerPort: 80
