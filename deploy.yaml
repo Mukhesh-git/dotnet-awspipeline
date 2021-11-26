@@ -1,23 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: nginx-deployment
   labels:
-    app: dotnet
-  name: dotnet-deployment
+    app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: dotnet
+      app: nginx
   template:
     metadata:
       labels:
-        app: dotnet
+        app: nginx
     spec:
       containers:
-        - 
-          image: "971076122335.dkr.ecr.us-east-2.amazonaws.com/demo-ecr:sample-dot-buildNumber"
-          name: dotnet
-          ports:
-            - 
-              containerPort: 80
+      - name: nginx
+        image: "971076122335.dkr.ecr.us-east-2.amazonaws.com/demo-ecr:sample-dot-buildNumber"
+        ports:
+        - containerPort: 80
+
+  
+  
