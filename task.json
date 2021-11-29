@@ -3,12 +3,12 @@
        { 
           
           "essential": true,
-          "image": "971076122335.dkr.ecr.ap-south-1.amazonaws.com/sample:SAMPLE-PROJECT-buildNumber",
+          "image": "971076122335.dkr.ecr.us-east-2.amazonaws.com/sample:SAMPLE-PROJECT-buildNumber",
           "logConfiguration": { 
              "logDriver": "awslogs",
              "options": { 
                 "awslogs-group" : "/ecs/anuj-new",
-                "awslogs-region": "ap-south-1",
+                "awslogs-region": "us-east-2",
                 "awslogs-stream-prefix": "ecs"
              }
           },
